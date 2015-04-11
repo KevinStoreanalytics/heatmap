@@ -1,0 +1,24 @@
+<div id="page-heading">
+	<ol class="breadcrumb">
+		<li><a href="#/">Dashboard</a></li>
+		<li>Heatmap</li>
+		<li class="active">Frontend</li>
+	</ol>
+
+	<h1>Frontend</h1>
+	<div class="options">
+		<a href="#" class="btn btn-default"><i class="fa fa-cog"></i></a>
+	</div>
+</div>
+<div class="container-fluid" ng-controller="HeatmapController">
+
+	<div class="row">
+		<div id="params">
+            <p>Kalenderwoche: </p>
+            <select ng-change="updateHeatmap(calWeeks[calInit.calWeek-1])" ng-model="calInit.calWeek">
+                	<option ng-repeat="calWeek in calWeeks" value="{{calWeek.value}}">{{calWeek.displayName}}</option>
+            </select>
+        </div><br>
+        <div id="map-canvas" style="width:1200px; height: 600px;"></div>
+	</div>
+</div> 
